@@ -3,7 +3,7 @@
 
 <head>
     <script src="index.js"></script>
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="images/computer_explorer-1.png">
 
     <style>
 
@@ -44,7 +44,7 @@
             justify-content: center;
             padding: 30px;
             padding-bottom: 0px;
-            font-size: 200%;
+            font-size: 175%;
             overflow:hidden;
 
         }
@@ -123,6 +123,10 @@
             border-style: inset;
         }
 
+        #bigbutton:hover {
+            cursor: pointer;
+        }
+
         .icons {
             padding: 20px;
             padding-bottom: 0;
@@ -159,14 +163,12 @@
             background-color: white;
             height: 300px;
             width: 800px;
-            
-            border-style: inset;
+        
         }
 
-        #whitespace p {
-            margin: 0;
-            padding: 0;
+        textarea {
             font-size: 150%;
+            font-family: "w98";
         }
 
 
@@ -184,6 +186,11 @@
             <img src = images/template_world-3.png>
             <p>Socials</p>
         </div>
+
+        <div onclick="location.href='https://birb.cc'"">
+            <img src = images/world-4.png>
+            <p>www.birb.cc</p>
+        </div>
     </div>
  
 
@@ -191,6 +198,7 @@
     <div id="goaway" class=window style="top:8%; left:12%;">
 
         <div class=titlebar>
+            <img src="images/msg_error-2.png">
             <div><h2>envs.net</h2></div>
 
             <div id=controls class=push>
@@ -213,7 +221,7 @@
 
     </div>
 
-    <div id="about" class=window style="top:32%; left:6%; padding-bottom: 0; display:none">
+    <div id="about" class=window style="top:42%; left:6%; padding-bottom: 0; padding-right: 2px; display:none">
         
         <div class=titlebar>
             <img src="images/notepad-3.png">
@@ -231,8 +239,44 @@
         </div>
 
 
-        <div id = whitespace>
-            <p>I am a 17 year old C# and JS developer from the UK, currently studying Computer Science at A-Level.<br><br>I am currently looking for Software Engineering and Cyber Security apprenticeships<br><br>In JS I have written multiple discord bots, and a few powercord plugins. See my GitHub for more.<br><br>For my A-Level, I have been writing an IRC-like chat platform in C#.</p>
+        <textarea id = whitespace>
+I am a 17 year old C# and JS developer from the UK, currently studying Computer Science at A-Level.
+I am currently looking for Software Engineering and Cyber Security apprenticeships
+
+In JS I have written multiple discord bots, and a few powercord plugins. See my GitHub for more.
+
+For my A-Level, I have been writing an IRC-like chat platform in C#.
+        </textarea>
+    </div>
+
+    <div id="socials" class=window style="top:6%; left:62%; display:none">
+
+        <div class=titlebar>
+            <img src="images/world-1.png">
+
+            <div><h2>socials</h2></div>
+
+            <div id=controls class=push>
+                <button>_</button>
+                <button>O</button>
+                <button onclick="hide('socials')">X</button>
+            </div>                       
+        </div>
+
+        <div id = windowcontent>
+            <button id = bigbutton onclick="location.href='https://www.instagram.com/hummusbirb/'">Instagram</button>
+        </div>
+        <div id = windowcontent>
+            <button id = bigbutton onclick="location.href='https://www.discordapp.com/users/375671695240855553'">Discord</button>
+        </div>
+        <div id = windowcontent>
+            <button id = bigbutton onclick="location.href='https://www.github.com/hummusbird'">GitHub</button>
+        </div>
+        <div id = windowcontent>
+            <button id = bigbutton onclick="location.href='https://www.youtube.com/channel/UCLWZz9da1OEVtbEvYE95Zjw'">YouTube</button>
+        </div>
+        <div id = windowcontent>
+            <button id = bigbutton onclick="location.href='https://www.steamcommunity.com/id/hummusbirb/'">Steam</button>
         </div>
     </div>
 </body>
