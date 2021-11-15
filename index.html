@@ -23,7 +23,8 @@
             image-rendering: pixelated;
         }
 
-        #window {
+        .window {
+            display: none;
             background-color: #C0C0C0;
             color: black;
             border-right: #000;
@@ -36,7 +37,7 @@
             width: fit-content;
             height: fit-content;
 
-            position: fixed;
+            position: absolute;
         }
 
         #windowcontent {
@@ -58,7 +59,7 @@
             width: 75px;
         }
 
-        #titlebar{
+        .titlebar{
             color: white;
             background: linear-gradient(90deg, #000080 0%, #1084d0 100%);
             height: 30px;
@@ -67,7 +68,7 @@
             width: 100%;
         }
 
-        #titlebar h2{
+        .titlebar h2{
             margin: 1px 0 0 5px;
             
             -webkit-font-smoothing: none;
@@ -123,20 +124,49 @@
             border-style: inset;
         }
 
+        .icons {
+            padding: 20px;
+            width: fit-content;
+            height: fit-content;
+        }
+
+        .icons div img {
+            height: 70px;
+        }
+
+        .icons div p {
+            font-size: 150%;
+            color: white;
+            margin-top: 10px;
+        }
+
+        .icons div:hover {
+            cursor: pointer;
+        }
+
 
     </style>
 </head>
 
 <body>
-    <div id=window>
+    <div class = icons>
+        <div id = socials onclick="display('goaway')">
+            <img src = images/template_world-3.png>
+            <p>socials</p>
+        </div>
 
-        <div id=titlebar>
+    </div>
+
+
+    <div id="goaway" class=window>
+
+        <div class=titlebar>
             <div><h2>HummusBird</h2></div>
 
             <div id=controls class=push>
                 <button>_</button>
                 <button>O</button>
-                <button>X</button>
+                <button onclick="hide('goaway')">X</button>
             </div>                       
         </div>
 
@@ -148,7 +178,7 @@
         </div>
 
         <div id = windowcontent>
-            <button id = bigbutton>OK</button>
+            <button id=bigbutton onclick="hide('goaway')">OK</button>
         </div>
 
     </div>
