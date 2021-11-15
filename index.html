@@ -125,6 +125,7 @@
 
         .icons {
             padding: 20px;
+            padding-bottom: 0;
             width: fit-content;
             height: fit-content;
             
@@ -132,8 +133,9 @@
 
         .icons div img {
             height: 70px;
-            padding-left: 10px;
-            margin: auto;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
         }
 
         .icons div p {
@@ -147,6 +149,26 @@
             cursor: pointer;
         }
 
+        #optionbar p {
+            padding: 2px 0 2px 0;
+            margin: 0;
+            font-size: 150%
+        }
+
+        #whitespace {
+            background-color: white;
+            height: 300px;
+            width: 800px;
+            
+            border-style: inset;
+        }
+
+        #whitespace p {
+            margin: 0;
+            padding: 0;
+            font-size: 150%;
+        }
+
 
     </style>
 </head>
@@ -155,21 +177,21 @@
     <div class = icons>
         <div onclick="display('about')">
             <img src = images/notepad-5.png>
-            <p>About Me</p>
+            <p>aboutme.txt</p>
         </div>
 
         <div onclick="display('socials')">
             <img src = images/template_world-3.png>
             <p>Socials</p>
         </div>
-
     </div>
+ 
 
 
     <div id="goaway" class=window style="top:8%; left:12%;">
 
         <div class=titlebar>
-            <div><h2>HummusBird</h2></div>
+            <div><h2>envs.net</h2></div>
 
             <div id=controls class=push>
                 <button>_</button>
@@ -191,10 +213,11 @@
 
     </div>
 
-    <div id="about" class=window style="top:32%; left:6%; display:none">
+    <div id="about" class=window style="top:32%; left:6%; padding-bottom: 0; display:none">
         
         <div class=titlebar>
-            <div><h2>About Me</h2></div>
+            <img src="images/notepad-3.png">
+            <div><h2>aboutme.txt - Notepad</h2></div>
 
             <div id=controls class=push>
                 <button>_</button>
@@ -202,19 +225,14 @@
                 <button onclick="hide('about')">X</button>
             </div>
         </div>
-        
-        <div id = windowcontent>
 
-            <div>
-                <p>discord // hummusbird#3705</p>
-                <p>instagram // @hummusbirb</p>
-                <p>twitter // @hummusbirb</p>
-            </div>
-
+        <div id = optionbar>
+            <p>&emsp;File&emsp;Edit&emsp;Search&emsp;Help</p>
         </div>
 
-        <div id = windowcontent>
-            <button id=bigbutton onclick="hide('about')">Close</button>
+
+        <div id = whitespace>
+            <p>I am a 17 year old C# and JS developer from the UK, currently studying Computer Science at A-Level.<br><br>I am currently looking for Software Engineering and Cyber Security apprenticeships<br><br>In JS I have written multiple discord bots, and a few powercord plugins. See my GitHub for more.<br><br>For my A-Level, I have been writing an IRC-like chat platform in C#.</p>
         </div>
     </div>
 </body>
