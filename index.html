@@ -24,7 +24,6 @@
         }
 
         .window {
-            display: none;
             background-color: #C0C0C0;
             color: black;
             border-right: #000;
@@ -128,16 +127,20 @@
             padding: 20px;
             width: fit-content;
             height: fit-content;
+            
         }
 
         .icons div img {
             height: 70px;
+            padding-left: 10px;
+            margin: auto;
         }
 
         .icons div p {
             font-size: 150%;
             color: white;
             margin-top: 10px;
+            text-align: center;
         }
 
         .icons div:hover {
@@ -150,15 +153,20 @@
 
 <body>
     <div class = icons>
-        <div id = socials onclick="display('goaway')">
+        <div onclick="display('about')">
+            <img src = images/notepad-5.png>
+            <p>About Me</p>
+        </div>
+
+        <div onclick="display('socials')">
             <img src = images/template_world-3.png>
-            <p>socials</p>
+            <p>Socials</p>
         </div>
 
     </div>
 
 
-    <div id="goaway" class=window>
+    <div id="goaway" class=window style="top:8%; left:12%;">
 
         <div class=titlebar>
             <div><h2>HummusBird</h2></div>
@@ -181,5 +189,32 @@
             <button id=bigbutton onclick="hide('goaway')">OK</button>
         </div>
 
+    </div>
+
+    <div id="about" class=window style="top:32%; left:6%; display:none">
+        
+        <div class=titlebar>
+            <div><h2>About Me</h2></div>
+
+            <div id=controls class=push>
+                <button>_</button>
+                <button>O</button>
+                <button onclick="hide('about')">X</button>
+            </div>
+        </div>
+        
+        <div id = windowcontent>
+
+            <div>
+                <p>discord // hummusbird#3705</p>
+                <p>instagram // @hummusbirb</p>
+                <p>twitter // @hummusbirb</p>
+            </div>
+
+        </div>
+
+        <div id = windowcontent>
+            <button id=bigbutton onclick="hide('about')">Close</button>
+        </div>
     </div>
 </body>
