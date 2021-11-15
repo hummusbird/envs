@@ -6,8 +6,21 @@
     <link rel="shortcut icon" type="image/png" href="images/favicon.png">
 
     <style>
+
+        @font-face {
+            font-family: 'w98';
+            src: url('w95fa.woff');
+            src: url('w95fa.woff2');
+            src: url('w95fa.otf');
+            
+        }
+
         body {
             background-color: #008080;
+            font-family: "w98";
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         #window {
@@ -29,8 +42,9 @@
         }
 
         #titlebar h2{
-            margin: 0 0 0 5px;
-            font-family: "consolas"
+            margin: 1px 0 0 5px;
+            
+            -webkit-font-smoothing: none;
         }
 
         .push {
@@ -45,7 +59,9 @@
             border-color: #c0c0c0;
             width: 25px;
             height: 25px;
-
+            font-family: "w98";
+            font-size: 20px;
+            padding: 0;
         }
 
         #controls button:active{
