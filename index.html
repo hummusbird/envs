@@ -17,6 +17,8 @@
         body {
             background-color: #008080;
             font-family: "w98";
+            padding: 0;
+            margin: 0;
             font-size: 16px;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
@@ -174,6 +176,86 @@
             white-space: nowrap;
         }
 
+        #taskbar {
+            display: inline-flex;
+            background-color: #bfbfbf;
+            width: 100vw;
+            height: 40px;
+            position: absolute;
+            padding: 0;
+            margin: 0;
+            bottom: 0px;
+        }
+
+        .taskbarbutton {
+            display:inline-flex;
+            font-family: "w98";
+            border-style: outset;
+            border-width: 2px;
+            height: 35px;
+            width: fit-content;
+            margin: 2.5px;
+            padding: 0 2.5px 0 2.5px;
+            background-color: #bfbfbf;
+            font-size:150%;
+        }
+
+        .taskbarbutton img {
+            padding-right:3px;
+            height: 25px;
+            padding-top: 3px;
+        }
+    
+        .taskbutton-outset {
+            border-right: #000;
+            border-bottom: #000;
+            border-top: #efefef;
+            border-left: #efefef;
+            border-style: outset;
+        }
+
+        .taskbutton-inset {
+            border-left: #000;
+            border-top: #000;
+            border-bottom: #efefef;
+            border-right: #efefef;
+            border-style: inset;
+        }
+
+        #start {
+            border-right: #000;
+            border-bottom: #000;
+            border-top: #efefef;
+            border-left: #efefef;
+            border-style: outset;
+            font-size:175%;
+        }
+
+        #start:active {
+            border-left: #000;
+            border-top: #000;
+            border-bottom: #efefef;
+            border-right: #efefef;
+            border-style: inset;
+        }
+
+        #time {
+            display: inline-flex;
+            position: absolute;
+            right: 2px;
+            padding: 3px;
+            font-size: 130%;
+            margin: 2.5px;
+            border-style: inset;
+        }
+        #time p {
+            margin: 0 10px 0 10px;
+        }
+
+        #time img{
+            width: 20px;
+            margin: 0 5px 0 0;
+        }
 
     </style>
 </head>
@@ -190,7 +272,7 @@
             <p>Socials</p>
         </div>
 
-        <div onclick="location.href='https://birb.cc'"">
+        <div onclick="location.href='https://birb.cc'">
             <img src = images/world-4.png>
             <p>www.birb.cc</p>
         </div>
@@ -205,7 +287,7 @@
             <div><h2>envs.net</h2></div>
 
             <div id=controls class=push>
-                <button>_</button>
+                <button onclick="minimize('goaway')">_</button>
                 <button>O</button>
                 <button onclick="hide('goaway')">X</button>
             </div>                       
@@ -231,7 +313,7 @@
             <div><h2>aboutme.txt - Notepad</h2></div>
 
             <div id=controls class=push>
-                <button>_</button>
+                <button onclick="minimize('about')">_</button>
                 <button>O</button>
                 <button onclick="hide('about')">X</button>
             </div>
@@ -260,7 +342,7 @@ For my A-Level, I have been writing an IRC-like chat platform in C#.
             <div><h2>socials</h2></div>
 
             <div id=controls class=push>
-                <button>_</button>
+                <button onclick="minimize('socials')">_</button>
                 <button>O</button>
                 <button onclick="hide('socials')">X</button>
             </div>                       
@@ -281,5 +363,46 @@ For my A-Level, I have been writing an IRC-like chat platform in C#.
         <div id = windowcontent>
             <button id = bigbutton onclick="location.href='https://www.steamcommunity.com/id/hummusbirb/'">Steam</button>
         </div>
+    </div>
+
+    <div id=taskbar>
+        <button id=start class=taskbarbutton>
+            <img src = "images/windows-0.png">
+            <b>Start</b>
+        </button>
+
+        <button id=goawaytaskbar class="taskbarbutton taskbutton-inset" onclick="minimize('goaway')">
+            <img src="images/msg_error-2.png">envs.net
+        </button>
+
+        <button id=socialstaskbar class=taskbarbutton style="display:none" onclick="minimize('socials')">
+            <img src="images/world-1.png">Socials
+        </button>
+
+        <button id=abouttaskbar class=taskbarbutton style="display:none" onclick="minimize('about')">
+            <img src="images/notepad-0.png">aboutme.txt
+        </button>
+
+        <div id = time>
+            <img src="images/loudspeaker_rays-1.png">
+            <img src="images/modem-1.png">
+            <img src="images/mouse_ms-0.png">
+            <p id = settime>00:00 AM</p>
+            <script>
+                setInterval(function() {
+                    var date = new Date();
+                    var hours = date.getHours();
+                    var minutes = date.getMinutes();
+                    var ampm = hours >= 12 ? 'PM' : 'AM';
+                    hours = hours % 12;
+                    hours = hours ? hours : 12; // the hour '0' should be '12'
+                    minutes = minutes < 10 ? '0'+minutes : minutes;
+                    var strTime = hours + ':' + minutes + ' ' + ampm;
+                    document.getElementById('settime').innerHTML = strTime;
+                    console.log("alls")
+                }, 600);
+            </script>
+        </div>
+
     </div>
 </body>
