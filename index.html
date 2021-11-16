@@ -276,6 +276,11 @@
             <img src = images/world-4.png>
             <p>www.birb.cc</p>
         </div>
+
+        <div onclick="display('video')">
+            <img src = images/video_-2.png>
+            <p>latest video</p>
+        </div>
     </div>
  
 
@@ -365,6 +370,48 @@ For my A-Level, I have been writing an IRC-like chat platform in C#.
         </div>
     </div>
 
+    <div id="video" class=window style="top:2%; left:9%; padding-bottom: 0; padding-right: 2px; display:none">
+        
+        <div class=titlebar>
+            <img src="images/video_-0.png">
+            <div><h2>latest video - YouTube.com</h2></div>
+
+            <div id=controls class=push>
+                <button onclick="minimize('video')">_</button>
+                <button>O</button>
+                <button onclick="hide('video')">X</button>
+            </div>
+        </div>
+
+        <div id = optionbar>
+            <p>&emsp;File&emsp;Edit&emsp;Search&emsp;Help</p>
+        </div>
+
+        <div id=windowcontent>
+            <iframe class="latestVideoEmbed" vnum='0' cid="UCLWZz9da1OEVtbEvYE95Zjw" width="600" height="340" frameborder="0" allowfullscreen></iframe>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+            <script>
+                var reqURL = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent("https://www.youtube.com/feeds/videos.xml?channel_id=");
+                function loadVideo(iframe) {
+                $.getJSON(reqURL + iframe.getAttribute('cid'),
+                    function(data) {
+                    var videoNumber = (iframe.getAttribute('vnum') ? Number(iframe.getAttribute('vnum')) : 0);
+                    console.log(videoNumber);
+                    var link = data.items[videoNumber].link;
+                    id = link.substr(link.indexOf("=") + 1);
+                    iframe.setAttribute("src", "https://youtube.com/embed/" + id);
+                    }
+                );
+                }
+                var iframes = document.getElementsByClassName('latestVideoEmbed');
+                for (var i = 0, len = iframes.length; i < len; i++) {
+                loadVideo(iframes[i]);
+                }
+            </script>
+        </div>
+        <div id = windowcontent></div>
+    </div>
+
     <div id=taskbar>
         <button id=start class=taskbarbutton>
             <img src = "images/windows-0.png">
@@ -381,6 +428,10 @@ For my A-Level, I have been writing an IRC-like chat platform in C#.
 
         <button id=abouttaskbar class=taskbarbutton style="display:none" onclick="minimize('about')">
             <img src="images/notepad-0.png">aboutme.txt
+        </button>
+
+        <button id=videotaskbar class=taskbarbutton style="display:none" onclick="minimize('video')">
+            <img src="images/video_-0.png">latest video
         </button>
 
         <div id = time>
