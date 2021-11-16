@@ -162,10 +162,11 @@
         }
 
         #whitespace {
+            display: inline-flex;
             background-color: white;
-            height: 300px;
+            height: 400px;
             width: 800px;
-        
+            border-style: inset;
         }
 
         textarea {
@@ -274,12 +275,22 @@
 
         <div onclick="location.href='https://birb.cc'">
             <img src = images/world-4.png>
-            <p>www.birb.cc</p>
+            <p>birb.cc</p>
         </div>
 
         <div onclick="display('video')">
-            <img src = images/video_-2.png>
-            <p>latest video</p>
+            <img src = images/wm_file-5.png>
+            <p>latestvid.mp4</p>
+        </div>
+
+        <div onclick="display('projects')">
+            <img src = images/directory_open_file_mydocs_2k-4.png>
+            <p>projects</p>
+        </div>
+
+        <div onclick="display('help')">
+            <img src = images/notepad-5.png>
+            <p>help.txt</p>
         </div>
     </div>
  
@@ -288,7 +299,7 @@
     <div id="goaway" class=window style="top:8%; left:12%;">
 
         <div class=titlebar>
-            <img src="images/msg_error-2.png">
+            <img src="images/msg_information-2.png">
             <div><h2>envs.net</h2></div>
 
             <div id=controls class=push>
@@ -300,9 +311,10 @@
 
         <div id = windowcontent>
 
-            <div><img src="images/msg_error-0.png"></div>
-            <div><p>not finished - go away</p></div>
-            
+            <div><img src="images/msg_information-0.png"></div>
+            <div>
+                <p>This site is still in development</p>
+            </div>
         </div>
 
         <div id = windowcontent>
@@ -330,21 +342,23 @@
 
 
         <textarea id = whitespace>
-I am a 17 year old C# and JS developer from the UK, currently studying Computer Science at A-Level.
+I am a 17 year old C# and JS developer from the UK, studying Computer Science at A-Level.
 I am currently looking for Software Engineering and Cyber Security apprenticeships
 
-In JS I have written multiple discord bots, and a few powercord plugins. See my GitHub for more.
+In JS I have written multiple discord bots, and a few powercord plugins.
 
 For my A-Level, I have been writing an IRC-like chat platform in C#.
+
+To see my projects, open the "projects" folder on the desktop.
 </textarea>
     </div>
 
-    <div id="socials" class=window style="top:6%; left:62%; display:none">
+    <div id="socials" class=window style="top:36%; left:62%; display:none">
 
         <div class=titlebar>
             <img src="images/world-1.png">
 
-            <div><h2>socials</h2></div>
+            <div><h2>Socials</h2></div>
 
             <div id=controls class=push>
                 <button onclick="minimize('socials')">_</button>
@@ -373,8 +387,8 @@ For my A-Level, I have been writing an IRC-like chat platform in C#.
     <div id="video" class=window style="top:2%; left:9%; padding-bottom: 0; padding-right: 2px; display:none">
         
         <div class=titlebar>
-            <img src="images/video_-0.png">
-            <div><h2>latest video - YouTube.com</h2></div>
+            <img src="images/wm_file-1.png">
+            <div><h2>latestvid.mp4 - YouTube.com</h2></div>
 
             <div id=controls class=push>
                 <button onclick="minimize('video')">_</button>
@@ -387,8 +401,7 @@ For my A-Level, I have been writing an IRC-like chat platform in C#.
             <p>&emsp;File&emsp;Edit&emsp;Search&emsp;Help</p>
         </div>
 
-        <div id=windowcontent>
-            <iframe class="latestVideoEmbed" vnum='0' cid="UCLWZz9da1OEVtbEvYE95Zjw" width="600" height="340" frameborder="0" allowfullscreen></iframe>
+            <iframe class="latestVideoEmbed" vnum='0' cid="UCLWZz9da1OEVtbEvYE95Zjw" width="800" height="450" frameborder="0" allowfullscreen></iframe>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
             <script>
                 var reqURL = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent("https://www.youtube.com/feeds/videos.xml?channel_id=");
@@ -408,18 +421,108 @@ For my A-Level, I have been writing an IRC-like chat platform in C#.
                 loadVideo(iframes[i]);
                 }
             </script>
+    </div>
+
+    <div id="projects" class=window style="top:32%; left:40%; padding-bottom: 0; padding-right: 2px; display:none">
+        
+        <div class=titlebar>
+            <img src="images/directory_open_file_mydocs_2k-1.png">
+            <div><h2>projects</h2></div>
+
+            <div id=controls class=push>
+                <button onclick="minimize('projects')">_</button>
+                <button>O</button>
+                <button onclick="hide('projects')">X</button>
+            </div>
         </div>
-        <div id = windowcontent></div>
+
+        <div id = optionbar>
+            <p>&emsp;Name&emsp;Edit&emsp;View&emsp;Help</p>
+        </div>
+
+        <div id = whitespace>
+            <div class = icons>
+                <div onclick="location.href='https://github.com/hummusbird/powercord-crypto'">
+                    <img src = images/appwizard-3.png>
+                    <p style="color: black;">powercord-crypto</p>
+                </div>
+        
+                <div onclick="location.href='https://github.com/hummusbird/wallpaperChanger'">
+                    <img src = images/themes-3.png>
+                    <p style="color: black;">wallpaperChanger</p>
+                </div>
+
+                <div onclick="location.href='https://github.com/hummusbird/envs'">
+                    <img src = images/world_network_directories-5.png>
+                    <p style="color: black;">envs website</p>
+                </div>
+            </div>
+
+            <div class = icons>
+                <div onclick="location.href='https://github.com/hummusbird/clic'">
+                    <img src = images/console_prompt-0.png>
+                    <p style="color: black;">Cli-C</p>
+                </div>
+        
+                <div onclick="location.href='https://github.com/hummusbird/website'">
+                    <img src = images/world_network_directories-5.png>
+                    <p style="color: black;">birb.cc</p>
+                </div>
+
+                <div onclick="location.href='https://github.com/hummusbird/glasscord-injector'">
+                    <img src = images/xml_gear-2.png>
+                    <p style="color: black;">glasscord-injector</p>
+                </div>
+            </div>
+
+            <div class = icons>
+                <div onclick="location.href='https://github.com/hummusbird/clapped'">
+                    <img src = images/msagent-3.png>
+                    <p style="color: black;">clapped</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="help" class=window style="top:2%; left:46%; padding-bottom: 0; padding-right: 2px; display:none">
+        
+        <div class=titlebar>
+            <img src="images/notepad-3.png">
+            <div><h2>help.txt - Notepad</h2></div>
+
+            <div id=controls class=push>
+                <button onclick="minimize('help')">_</button>
+                <button>O</button>
+                <button onclick="hide('help')">X</button>
+            </div>
+        </div>
+
+        <div id = optionbar>
+            <p>&emsp;File&emsp;Edit&emsp;Search&emsp;Help</p>
+        </div>
+
+
+        <textarea id = whitespace>
+Welcome to my envs.net site - a recreation of Windows 98!
+It functions just how you expect, with limited functionality (obviously)
+
+It's still in development, so more cool things might be added later :D
+
+Click an icon on the left to open a program or folder.
+You can close a window with X, or minimise it with _
+
+This site uses only CSS, JS and HTML. No funny business
+</textarea>
     </div>
 
     <div id=taskbar>
         <button id=start class=taskbarbutton>
-            <img src = "images/windows-0.png">
+            <img src = "images/windows-4.png">
             <b>Start</b>
         </button>
 
         <button id=goawaytaskbar class="taskbarbutton taskbutton-inset" onclick="minimize('goaway')">
-            <img src="images/msg_error-2.png">envs.net
+            <img src="images/msg_information-2.png">envs.net
         </button>
 
         <button id=socialstaskbar class=taskbarbutton style="display:none" onclick="minimize('socials')">
@@ -431,7 +534,15 @@ For my A-Level, I have been writing an IRC-like chat platform in C#.
         </button>
 
         <button id=videotaskbar class=taskbarbutton style="display:none" onclick="minimize('video')">
-            <img src="images/video_-0.png">latest video
+            <img src="images/video_-0.png">latestvid.mp4
+        </button>
+
+        <button id=projectstaskbar class=taskbarbutton style="display:none" onclick="minimize('projects')">
+            <img src="images/directory_open_file_mydocs_2k-1.png">projects
+        </button>
+
+        <button id=helptaskbar class=taskbarbutton style="display:none" onclick="minimize('help')">
+            <img src="images/notepad-0.png">help.txt
         </button>
 
         <div id = time>
@@ -450,7 +561,6 @@ For my A-Level, I have been writing an IRC-like chat platform in C#.
                     minutes = minutes < 10 ? '0'+minutes : minutes;
                     var strTime = hours + ':' + minutes + ' ' + ampm;
                     document.getElementById('settime').innerHTML = strTime;
-                    console.log("alls")
                 }, 600);
             </script>
         </div>
