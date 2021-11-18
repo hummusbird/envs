@@ -15,6 +15,7 @@
         }
 
         body {
+            overflow: hidden;
             background-color: #008080;
             font-family: "w98";
             padding: 0;
@@ -170,6 +171,7 @@
         }
 
         textarea {
+            overflow:scroll;
             font-size: 150%;
             font-family: "w98";
             min-height: 50px;
@@ -199,6 +201,14 @@
             padding: 0 2.5px 0 2.5px;
             background-color: #bfbfbf;
             font-size:150%;
+        }
+
+        .taskbarbutton:active {
+            border-left: #000;
+            border-top: #000;
+            border-bottom: #efefef;
+            border-right: #efefef;
+            border-style: inset;
         }
 
         .taskbarbutton img {
@@ -256,6 +266,47 @@
         #time img{
             width: 20px;
             margin: 0 5px 0 0;
+        }
+
+        ::-webkit-scrollbar{
+            width: 25px;
+            height: 25px;
+        }      
+
+        ::-webkit-scrollbar-corner{
+            background-color: #c0c0c0;
+        }
+
+        ::-webkit-scrollbar-button{
+            border-right: #000;
+            border-bottom: #000;
+            border-top: #efefef;
+            border-left: #efefef;
+            border-style: outset;
+            background-color: #c0c0c0;
+        }
+
+        ::-webkit-scrollbar-track{
+            background-color: #efefef;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #c0c0c0;
+            border-right: #000;
+            border-bottom: #000;
+            border-top: #efefef;
+            border-left: #efefef;
+            border-style: outset;
+        }
+        
+        ::-webkit-scrollbar-button {
+            width: 25px;
+            height: 25px;
+
+        }
+
+        ::-webkit-resizer{
+            color: transparent;
         }
 
     </style>
